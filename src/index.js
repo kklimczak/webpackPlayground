@@ -1,9 +1,15 @@
+let mainTemplate = require('./templates/main.handlebars');
+
 function createElement() {
-    let element = document.createElement('div');
+    document.addEventListener('DOMContentLoaded', () => {
+        let div = document.createElement('div');
 
-    element.innerHTML += "Welcome to my world";
+        div.innerHTML = mainTemplate({
+            name: 'Works!'
+        });
 
-    document.body.appendChild(element);
+        document.body.appendChild(div);
+    });
 }
 
 createElement();
