@@ -1,14 +1,25 @@
 export default class Component {
 
-    constructor(name) {
-        this._name = name;
+    constructor(config) {
+        this.setConfiguration();
+        this.loadTemplate(config.template, config.data);
+        this.init();
     }
 
-    get name() {
-        return this._name;
+    loadTemplate(template, data) {
+
+        let div = document.createElement('div');
+
+        div.innerHTML = template(data);
+
+        document.body.appendChild(div);
     }
 
-    set name(value) {
-        this._name = value;
+    setConfiguration() {
+
+    }
+
+    init() {
+
     }
 }
