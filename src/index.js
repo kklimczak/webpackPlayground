@@ -1,15 +1,10 @@
-let mainTemplate = require('./templates/main.handlebars');
+import HeaderComponent from './components/header/header';
 
-function createElement() {
-    document.addEventListener('DOMContentLoaded', () => {
-        let div = document.createElement('div');
 
-        div.innerHTML = mainTemplate({
-            name: 'Works!'
-        });
-
-        document.body.appendChild(div);
-    });
+function bootstrap() {
+    new HeaderComponent();
 }
 
-createElement();
+document.addEventListener("DOMContentLoaded", function() {
+    bootstrap();
+});
