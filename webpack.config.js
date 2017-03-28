@@ -11,6 +11,17 @@ module.exports = {
             {
                 test: /\.handlebars$/,
                 loader: "handlebars-loader"
+            },
+            {
+                loader: "babel-loader",
+
+                include: [
+                    path.resolve(__dirname, "src"),
+                ],
+                test: /\.js$/,
+                query: {
+                    presets: ['es2015']
+                }
             }
         ]
     }
