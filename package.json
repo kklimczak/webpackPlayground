@@ -1,0 +1,28 @@
+{
+  "name": "webpack-playground",
+  "version": "1.0.0",
+  "description": "My own webpack playground",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kklimczak/webpackPlayground.git"
+  },
+  "keywords": [
+    "webpack",
+    "kklimczak",
+    "playground"
+  ],
+  "author": "Konrad Klimczak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kklimczak/webpackPlayground/issues"
+  },
+  "homepage": "https://github.com/kklimczak/webpackPlayground#readme",
+  "devDependencies": {
+    "path": "^0.12.7",
+    "webpack": "^2.3.2"
+  }
+}
