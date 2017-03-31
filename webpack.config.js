@@ -1,4 +1,5 @@
 let path = require('path');
+let CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -24,5 +25,12 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    plugins: [
+        new CopyWebpackPlugin([
+            {
+                from: 'src/index.html'
+            }
+        ])
+    ]
 };

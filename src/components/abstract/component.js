@@ -1,7 +1,6 @@
 export default class Component {
 
     constructor(config) {
-        this.setConfiguration();
         this.loadTemplate(config.template, config.tag, config.data);
         this.init();
     }
@@ -12,13 +11,9 @@ export default class Component {
 
         div.innerHTML = template(data);
 
-        document.getElementsByTagName(tag)[0].replaceWith(div);
+        document.getElementsByTagName(tag)[0].appendChild(div);
 
         // document.body.appendChild(div);
-    }
-
-    setConfiguration() {
-
     }
 
     init() {
