@@ -4,12 +4,14 @@ class HeaderComponent extends Component {
 
     constructor() {
         super({
-            template: require('./header.handlebars'),
-            tag: 'app-header',
+            template: require('./header.component.handlebars'),
+            tag: 'header',
             data: {
                 name: 'example'
             }
         });
+
+
     }
 
     init() {

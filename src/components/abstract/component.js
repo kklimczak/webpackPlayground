@@ -7,13 +7,16 @@ export default class Component {
 
     loadTemplate(template, tag, data) {
 
-        let div = document.createElement('div');
+        let elements = document.querySelectorAll(`[data-${tag}]`);
 
-        div.innerHTML = template(data);
+        [].forEach.call(elements, (element) => {
+            let div = document.createElement('div');
 
-        document.getElementsByTagName(tag)[0].appendChild(div);
+            div.innerHTML = template(data);
 
-        // document.body.appendChild(div);
+            element.appendChild(div);
+        })
+
     }
 
     init() {

@@ -1,8 +1,8 @@
-import HeaderComponent from './components/header/header';
+import App from './app';
 
 
 function bootstrap() {
-    new HeaderComponent();
+    new App();
 }
 
 document.addEventListener("DOMContentLoaded", function() {
