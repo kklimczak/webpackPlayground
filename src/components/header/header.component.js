@@ -15,7 +15,8 @@ class HeaderComponent extends Component {
     }
 
     init() {
-
+        this.data.name = 'exa';
+        this.loadTemplate();
     }
 
 }

@@ -1,18 +1,29 @@
 export default class Component {
 
     constructor(config) {
-        this.loadTemplate(config.template, config.tag, config.data);
+        this.setConfiguration(config);
+        this.loadTemplate();
         this.init();
     }
 
-    loadTemplate(template, tag, data) {
+    setConfiguration(config) {
+        this.data = config.data;
+        this.template = config.template;
+        this.tag = config.tag;
+    }
 
-        let elements = document.querySelectorAll(`[data-${tag}]`);
+    loadTemplate() {
+
+        let elements = document.querySelectorAll(`[data-${this.tag}]`);
 
         [].forEach.call(elements, (element) => {
             let div = document.createElement('div');
 
-            div.innerHTML = template(data);
+            div.innerHTML = this.template(this.data);
+
+            while (element.firstChild) {
+                element.removeChild(element.firstChild);
+            }
 
             element.appendChild(div);
         })
